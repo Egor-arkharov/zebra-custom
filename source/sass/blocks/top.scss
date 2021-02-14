@@ -1,0 +1,131 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 56, 131, 0.4);
+}
+
+.top__left {
+  padding-top: 7px;
+}
+
+.top__left-title {
+  @include font-xl;
+  color: $header-title-color;
+}
+
+.top__right {
+  $after-width: 5000px;
+
+  position: relative;
+  margin-bottom: -1px;
+  padding: 9px 15px 5px 40px;
+
+  z-index: 1;
+
+  background: linear-gradient(270deg, $header-text-color 0%, $header-title-color 97.05%);
+  border-bottom: 1px solid $header-text-color;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+
+    width: 0;
+    height: 0;
+
+    border-top: 0px solid transparent;
+    border-left: 15px solid $body-color;
+    border-bottom: 40px solid transparent;
+  }
+
+  &::after{
+    position: absolute;
+    content: "";
+    display: block;
+
+    width: $after-width;
+    height: calc(100% + 1px);
+
+    right: -$after-width;
+    top: 0;
+
+    z-index: 0;
+
+    background: $header-text-color;
+  }
+}
+
+.top__right-list {
+  display: flex;
+  align-items: center;
+  height: 25px;
+}
+
+.top__right-item {
+  display: flex;
+  margin-left: 35px;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.top__right-input {
+  width: 0;
+  height: 22px;
+
+  margin-right: 5px;
+  padding: 0;
+
+  border: 0;
+
+  box-shadow: none;
+  background: #ffffff;
+
+  line-height: 22px;
+  transition: width 0.2s, padding 0.2s, margin-right 0.2s;
+
+  &--active{
+    width: 150px;
+    margin-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.top__right-button {
+  @include font-xxs;
+  color: $body-color;
+
+  &:focus,
+  &:active{
+    border: none;
+    outline: none;
+  }
+}
+
+.top__right-button--search {
+  width: 22px;
+  height: 21px;
+
+  background-image: url("../img/icons/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.top__right-button--settings {
+  width: 19px;
+  height: 22px;
+
+  background-image: url("../img/icons/settings.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.top__right-button--save,
+.top__right-button--language {
+  @include font-xxs;
+}

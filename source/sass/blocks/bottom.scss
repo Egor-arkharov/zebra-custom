@@ -1,0 +1,36 @@
+.bottom {
+  flex-grow: 1;
+
+  padding-top: 11px;
+  padding-bottom: 13px;
+}
+
+.bottom__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bottom__item {
+  width: min-content;
+  margin-right: 44px;
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin: 0;
+    width: 215px;
+  }
+}
+
+.bottom__item-link {
+  @include font-xs;
+  display: block;
+
+  color: $header-text-color;
+  font-weight: 700;
+
+  &:focus,
+  &:active {
+    outline: 1px solid $text-color;
+    outline-offset: 3px;
+  }
+}

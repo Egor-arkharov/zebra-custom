@@ -1,0 +1,25 @@
+.header__wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.header__logo-link {
+  width: 192px;
+  height: 82px;
+
+  margin-top: 15px;
+
+  &:focus,
+  &:active {
+    outline: 1px solid $text-color;
+    outline-offset: 3px;
+  }
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin-left: 120px;
+}
