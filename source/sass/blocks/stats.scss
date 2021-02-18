@@ -1,0 +1,42 @@
+.stats {
+  margin-top: 15px;
+  margin-bottom: 32px;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+
+.stats__main {
+  @include font-m;
+  font-weight: 500;
+
+  color: $aside-text-color;
+}
+
+.stats__value {
+  @include basic-font;
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+
+  color: $aside-text-color-alt;
+}
+
+// .stats__extra-list {
+
+// }
+
+.stats__extra-item {
+  @include font-m;
+  font-weight: 300;
+}
+
+.stats__extra-subject {
+  font-weight: 500;
+}
+
+.stats__extra-add {
+  font-style: italic;
+}

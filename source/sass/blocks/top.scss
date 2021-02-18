@@ -95,13 +95,13 @@
 }
 
 .top__right-button {
-  @include font-xxs;
+  @include font-s;
   color: $body-color;
 
-  &:focus,
-  &:active{
-    border: none;
-    outline: none;
+  &:hover,
+  &:focus {
+    outline: 1px solid $body-color;
+    outline-offset: 3px;
   }
 }
 
@@ -127,5 +127,5 @@
 
 .top__right-button--save,
 .top__right-button--language {
-  @include font-xxs;
+  @include font-s;
 }

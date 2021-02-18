@@ -22,12 +22,16 @@
 }
 
 .bottom__item-link {
-  @include font-xs;
+  @include font-l;
   display: block;
 
   color: $header-text-color;
   font-weight: 700;
 
+  width: 100%;
+  height: 100%;
+
+  &:hover,
   &:focus,
   &:active {
     outline: 1px solid $text-color;
