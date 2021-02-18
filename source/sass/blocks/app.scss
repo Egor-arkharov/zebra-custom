@@ -1,0 +1,58 @@
+.app {
+  @include font-m;
+
+  padding-top: 110px;
+  padding-left: 19px;
+  padding-right: 19px;
+
+  font-weight: 400;
+}
+
+.app__description {
+  position: relative;
+  margin-bottom: 15px;
+
+  font-style: italic;
+  color: #133a60;
+
+  &::before {
+    position: absolute;
+    content: "";
+
+    width: 76px;
+    height: 93px;
+
+    top: -110px;
+    left: 0;
+
+    background-image: url(../img/icons/phone.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+.app__extra {
+  color: $aside-text-color-alt;
+}
+
+.app__link {
+  display: block;
+
+  width: 16px;
+  height: 16px;
+
+  margin-left: auto;
+
+  background-image: url(../img/icons/link.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 1px solid black;
+    outline-offset: 3px;
+  }
+}

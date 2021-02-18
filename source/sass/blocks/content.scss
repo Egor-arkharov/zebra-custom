@@ -1,0 +1,48 @@
+.main {
+  padding-top: 17px;
+  font-family: $content-font;
+}
+
+.main-title {
+  @include basic-font;
+  margin-bottom: 15px;
+
+  font-size: 33px;
+  line-height: 40px;
+
+  text-transform: uppercase;
+  color: #003264;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 17px;
+}
+
+.content__left {
+  width: 1100px;
+  padding-bottom: 5px;
+}
+
+.content__left-title {
+  @include basic-font;
+  margin-bottom: 35px;
+
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: uppercase;
+
+  color: #1D1D1B;
+  border-bottom: 1px solid #1D1D1B;
+}
+
+.content__left-map {
+  width: 1100px;
+  height: 446px;
+  margin-bottom: 15px;
+}
+
+.content__right {
+  width: 300px;
+}
