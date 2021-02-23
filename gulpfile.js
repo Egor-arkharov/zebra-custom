@@ -14,7 +14,6 @@ var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 
 var imagemin = require("gulp-imagemin");
-var webp = require("gulp-webp");
 
 var del = require("del");
 
@@ -51,33 +50,15 @@ gulp.task("js", function() {
 gulp.task("images", function () {
   return gulp.src("source/img/**/*.{png,svg}")
     .pipe(imagemin([
-    imagemin.optipng({optimizationLevel: 3}),
-    imagemin.svgo()
-    ]))
+      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.svgo()
+      ]))
     .pipe(gulp.dest("source/img"));
-});
-
-gulp.task("webp", function() {
-  return gulp.src("source/img/**/*.png")
-    .pipe(webp({quality: 90}))
-    .pipe(gulp.dest("source/img"));
-});
-
-gulp.task("server", function () {
-  server.init({
-    server: "build/",
-  });
-
-  gulp.watch("source/sass/**/*.scss", gulp.series("css"));
-  gulp.watch("source/img/**/*", gulp.series("html", "refresh"));
-  gulp.watch("source/*.html", gulp.series("html", "refresh"));
-  gulp.watch("source/js/*.js", gulp.series("js", "refresh"));
 });
 
 gulp.task("copy", function () {
   return gulp.src([
-    "source/fonts/**/*.otf",
-    "source/img/**/*",
+    "source/img/**",
     "source/js/**",
     "source/*.ico"
     ], {
@@ -88,6 +69,17 @@ gulp.task("copy", function () {
 
 gulp.task("clean", function () {
   return del("build");
+});
+
+gulp.task("server", function () {
+  server.init({
+    server: "build/",
+  });
+
+  gulp.watch("source/sass/**/*.scss", gulp.series("css"));
+  gulp.watch("source/img/icons/*.svg", gulp.series("html", "refresh"));
+  gulp.watch("source/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/js/*.js", gulp.series("js", "refresh"));
 });
 
 gulp.task("refresh", function (done) {

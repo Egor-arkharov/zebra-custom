@@ -8,6 +8,10 @@
 
   margin-top: 15px;
 
+  &:hover {
+    opacity: 0.5;
+  }
+
   &:focus,
   &:active {
     outline: 1px solid $text-color;
