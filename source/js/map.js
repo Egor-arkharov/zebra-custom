@@ -1,5 +1,12 @@
 'use strict';
 
+const PREFIX = {
+  MAP: `map-`,
+  BANNER: `map__banner--`,
+  BUTTON: `btn-`,
+  TEXT: `text-`
+}
+
 const CLASS_HIDDEN = `visually-hidden`;
 const CLASS_BTN_ACTIVE = `countries__button--active`;
 const CLASS_COUNTRY_ACTIVE = `country--active`;
@@ -29,10 +36,10 @@ const changeText = function (country) {
         evt.preventDefault();
         clearMap()
 
-        const countryName = btn.id.slice(4);
+        const countryName = btn.id.replace(PREFIX.BUTTON, ``);
 
-        const countryBtn = countries.querySelector(`#btn-${countryName}`);
-        const countryText = countries.querySelector(`#text-${countryName}`);
+        const countryBtn = countries.querySelector(`#${PREFIX.BUTTON + countryName}`);
+        const countryText = countries.querySelector(`#${PREFIX.TEXT + countryName}`);
 
         countryBtn.classList.toggle(CLASS_BTN_ACTIVE);
         countryText.classList.toggle(CLASS_HIDDEN);
@@ -44,8 +51,8 @@ const changeText = function (country) {
     return;
   }
 
-  const countryBtn = countries.querySelector(`#btn-${country}`)
-  const countryText = countries.querySelector(`#text-${country}`);
+  const countryBtn = countries.querySelector(`#${PREFIX.BUTTON + country}`)
+  const countryText = countries.querySelector(`#${PREFIX.TEXT + country}`);
 
   countryBtn.classList.toggle(CLASS_BTN_ACTIVE);
   countryText.classList.toggle(CLASS_HIDDEN);
@@ -59,10 +66,10 @@ const changeMap = function (country) {
         evt.preventDefault();
         clearMap();
 
-        const countryName = country.id.slice(4);
+        const countryName = country.id.replace(PREFIX.MAP, ``);
 
-        const countryOnMap = map.querySelector(`#map-${countryName}`);
-        const countryBanner = map.querySelector(`.map__banner--${countryName}`);
+        const countryOnMap = map.querySelector(`#${PREFIX.MAP + countryName}`);
+        const countryBanner = map.querySelector(`.${PREFIX.BANNER + countryName}`);
 
         countryOnMap.classList.toggle(CLASS_COUNTRY_ACTIVE);
         countryBanner.classList.toggle(CLASS_HIDDEN);
@@ -74,8 +81,8 @@ const changeMap = function (country) {
     return;
   }
 
-  const countryOnMap = map.querySelector(`#map-${country}`)
-  const countryBanner = map.querySelector(`.map__banner--${country}`);
+  const countryOnMap = map.querySelector(`#${PREFIX.MAP + country}`)
+  const countryBanner = map.querySelector(`.${PREFIX.BANNER + country}`);
 
   countryOnMap.classList.toggle(CLASS_COUNTRY_ACTIVE)
   countryBanner.classList.toggle(CLASS_HIDDEN);
