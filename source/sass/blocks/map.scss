@@ -1,0 +1,17 @@
+.map__img {
+  width: 100%;
+  height: 100%;
+}
+
+path[id^="map-"] {
+  fill: $map-deafault-color;
+
+  &:hover {
+    fill: $map-hover-color;
+    cursor: pointer;
+  }
+}
+
+.country--active {
+  fill: $map-active-color !important;
+}
